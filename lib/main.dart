@@ -144,7 +144,7 @@ class _DojoHomeState extends State<DojoHome> {
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.red),
                     ),
-                    child: Text('Reset')),
+                    child: Text('Reset Scores')),
               ]),
             ),
           ],
