@@ -133,7 +133,18 @@ class _DojoHomeState extends State<DojoHome> {
                 Text(
                   'Total Rounds:  ' + exerciseDb.getTotalRounds().toString(),
                   style: TextStyle(fontSize: 30),
-                )
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        exerciseDb.reset();
+                      });
+                    },
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.red),
+                    ),
+                    child: Text('Reset')),
               ]),
             ),
           ],
