@@ -39,7 +39,7 @@ class ExerciseDb {
   }
 
   void roundCount() {
-    _rounds = (_actualExerciseRound / 3).floor();
+    _rounds = ((_actualExerciseRound + 1) / 3).floor();
   }
 
   int getTotalReps() {

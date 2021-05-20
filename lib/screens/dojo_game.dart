@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:dojo_test_app/exercise_db.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+CollectionReference ref = FirebaseFirestore.instance.collection('workouts');
 
 class DojoGame extends StatefulWidget {
   final ExerciseDb exercises;
-  const DojoGame({Key key, this.exercises}) : super(key: key);
+  DojoGame({Key key, this.exercises}) : super(key: key);
 
   @override
   // _DojoGameState createState() =>
@@ -100,10 +103,13 @@ class _DojoGameState extends State<DojoGame> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  widget.exercises.nextExercise();
-                  widget.exercises.repCount();
-                  widget.exercises.roundCount();
-                  print(widget.exercises.getTotalRounds().toString());
+                  widget.exercises.repCount(); //calculate total reps
+                  widget.exercises.roundCount(); //calculate total rounds
+                  print(widget.exercises
+                      .getTotalRounds()
+                      .toString()); //Just to check variables are getting set correctly
+                  widget.exercises
+                      .nextExercise(); //move on to next exercise as well as increment reps and round counters
                 });
               },
               child: Text('Finished Reps'),
@@ -141,6 +147,17 @@ class _DojoGameState extends State<DojoGame> {
                           MaterialStateProperty.all<Color>(Colors.red),
                     ),
                     child: Text('Reset Workout')),
+                ElevatedButton(
+                  onPressed: () {
+                    ref.add({
+                      "Total Reps": widget.exercises.getTotalReps(),
+                      "Total Rounds": widget.exercises.getTotalRounds()
+                    }).then((value) {
+                      print(value.id);
+                    });
+                  },
+                  child: Text('Submit Score'),
+                ),
               ]),
             ),
           ],

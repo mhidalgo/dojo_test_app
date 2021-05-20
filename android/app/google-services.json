@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "694636494456",
+    "project_id": "dojo-test-app-c311e",
+    "storage_bucket": "dojo-test-app-c311e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694636494456:android:b55513c32535498dacb78d",
+        "android_client_info": {
+          "package_name": "com.marvinhidalgo.dojo_test_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694636494456-s7m83031s5q8aliotmlqs49mgd4vbe8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF6p_QtdeJFZYwVNNCP5pg-l9VBXpCmzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694636494456-s7m83031s5q8aliotmlqs49mgd4vbe8p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "694636494456-oo3eoo4upogde1ecdt6q9fvrsvrovenq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.marvinhidalgo.dojoTestApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
